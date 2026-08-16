@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" aria-label="Building Modern UIs with CSS">
+  <defs>
+    <linearGradient id="css-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#667eea"/>
+      <stop offset="1" stop-color="#764ba2"/>
+    </linearGradient>
+    <linearGradient id="css-pink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f093fb"/>
+      <stop offset="1" stop-color="#f5576c"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#css-bg)"/>
+  <g opacity="0.12" fill="#ffffff">
+    <circle cx="90" cy="70" r="60"/>
+    <circle cx="720" cy="330" r="80"/>
+  </g>
+  <text x="46" y="345" font-family="Arial, Helvetica, sans-serif" font-size="120" font-weight="700" fill="#f093fb" opacity="0.6">{ }</text>
+  <rect x="240" y="70" width="320" height="260" rx="14" fill="#ffffff" opacity="0.16"/>
+  <rect x="240" y="70" width="320" height="40" rx="14" fill="#ffffff" opacity="0.10"/>
+  <circle cx="262" cy="90" r="6" fill="#f5576c" opacity="0.9"/>
+  <circle cx="284" cy="90" r="6" fill="#f093fb" opacity="0.9"/>
+  <circle cx="306" cy="90" r="6" fill="#ffffff" opacity="0.5"/>
+  <rect x="330" y="82" width="120" height="16" rx="8" fill="#ffffff" opacity="0.18"/>
+  <rect x="266" y="132" width="120" height="60" rx="8" fill="url(#css-pink)" opacity="0.9"/>
+  <rect x="402" y="132" width="60" height="60" rx="8" fill="#ffffff" opacity="0.18"/>
+  <rect x="266" y="206" width="196" height="14" rx="7" fill="#ffffff" opacity="0.35"/>
+  <rect x="266" y="230" width="160" height="14" rx="7" fill="#ffffff" opacity="0.22"/>
+  <rect x="266" y="254" width="176" height="14" rx="7" fill="#ffffff" opacity="0.22"/>
+  <rect x="266" y="292" width="70" height="24" rx="12" fill="#ffffff" opacity="0.25"/>
+  <circle cx="660" cy="120" r="18" fill="#f093fb" opacity="0.9"/>
+  <circle cx="694" cy="150" r="18" fill="#f5576c" opacity="0.9"/>
+  <circle cx="660" cy="186" r="18" fill="#ffffff" opacity="0.7"/>
+</svg>
