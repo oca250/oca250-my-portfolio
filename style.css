@@ -950,3 +950,156 @@ footer {
     font-size: 1.4rem;
   }
 }
+
+/* ==========================================================
+   Contact form validation feedback (used by script.js)
+   The error/status elements are created by JavaScript and
+   stay hidden until the user submits the form, so the
+   original design is unchanged.
+   ========================================================== */
+
+.contact-form .form-error {
+  display: none;
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin: -9px 0 12px;
+}
+
+.contact-form .form-error.visible {
+  display: block;
+}
+
+.contact-form input.input-error,
+.contact-form textarea.input-error {
+  border-color: #e74c3c;
+}
+
+.contact-form .form-status {
+  display: none;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.contact-form .form-status.success {
+  display: block;
+  color: #27ae60;
+}
+
+.contact-form .form-status.error {
+  display: block;
+  color: #e74c3c;
+}
+
+/* ==========================================================
+   Mobile phone fixes
+   These rules only apply on small screens.
+   The desktop/tablet design is completely untouched.
+   ========================================================== */
+
+@media (max-width: 768px) {
+  /* The fixed navbar is shorter now (hamburger menu), but it
+     still covers the top of the page. Without this offset,
+     clicking a nav link lands the section behind the navbar
+     and its heading is hidden. */
+  .section[id] {
+    scroll-margin-top: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Safety net: long unbroken text (e.g. the email address)
+     must never push the page wider than the screen. It fits
+     at 320px today; this guarantees it always will. */
+  .contact-info p {
+    overflow-wrap: break-word;
+  }
+}
+
+/* ==========================================================
+   Mobile hamburger menu
+   The button is hidden on desktop - the desktop navigation
+   is exactly as it was before. Only screens <= 768px see it.
+   ========================================================== */
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Brand on the left, hamburger on the right */
+  .logo {
+    float: left;
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    float: right;
+    width: 44px;
+    height: 40px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .menu-toggle .bar {
+    display: block;
+    width: 26px;
+    height: 3px;
+    border-radius: 2px;
+    background: #fff;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  /* Hamburger becomes an X while the menu is open */
+  .menu-toggle.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Navigation links: hidden until the button opens them */
+  .nav-links {
+    display: none;
+    float: none;
+    clear: both;
+    width: 100%;
+    margin-top: 10px;
+    padding-top: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  .nav-links.open {
+    display: block;
+  }
+
+  /* Stacked rows instead of inline links: full-width tap
+     targets, same colors and fonts as before */
+  .nav-links li {
+    display: block;
+    margin: 0;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 12px 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-toggle .bar {
+    transition: none;
+  }
+}
