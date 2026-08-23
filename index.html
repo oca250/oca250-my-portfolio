@@ -355,21 +355,48 @@
     </div>
   </section>
 
+  <section id="certifications" class="section">
+    <div class="container">
+      <h2 class="section-title">Certifications</h2>
+      <div class="divider"></div>
+      <p class="certificate-intro">Certificates and achievements I've earned.</p>
+      <div class="certificate-card">
+        <div class="certificate-media">
+          <img src="images/oca.png" id="certificate-image" alt="Certificate of Internship - NDACYAYISENGA Oscar, issued by Kisaki AppLine">
+        </div>
+        <div class="certificate-info">
+          <h3>Certificate of Internship</h3>
+          <p><strong>Issued By:</strong> Kigali AppLine</p>
+          <p><strong>Recipient:</strong> NDACYAYISENGA Oscar</p>
+          <p><strong>Date:</strong> 8/05/2026</p>
+          <p><strong>Category:</strong> Web Development</p>
+          <div class="certificate-actions">
+            <button type="button" class="btn btn-small" id="view-certificate">View Certificate</button>
+            <a href="images/oca.png" download="Oscar-KisakiAppLine-Internship-Certificate.jpg" class="btn btn-small btn-ghost">Download Certificate</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="contact" class="section">
     <div class="container">
       <h2 class="section-title">Get In Touch</h2>
       <div class="divider"></div>
+      <p class="contact-intro">Have a project in mind or looking for a software developer? Feel free to get in touch. I'm always open to new opportunities and collaborations.</p>
       <div class="contact-content">
         <div class="contact-info">
-          <p><strong>Email:</strong>oscarndacyayisenga89@gmail.com</p>
-          <p><strong>Phone:</strong>+250795348450</p>
-          <p><strong>Location:</strong>Kigali, Rwanda</p>
+          <p><strong>Email:</strong> oscarndacyayisenga89@gmail.com</p>
+          <p><strong>Phone:</strong> +250795348450</p>
+          <p><strong>Location:</strong> Kigali, Rwanda</p>
+          <span class="availability">Available for Internship &amp; Junior Developer Opportunities</span>
         </div>
-        <form class="contact-form">
-          <input type="text" placeholder="Your Name">
-          <input type="email" placeholder="Your Email">
-          <textarea placeholder="Your Message"></textarea>
-          <button type="submit" class="btn btn-primary">Send Message</button>
+        <form class="contact-form" novalidate>
+          <input type="text" name="name" placeholder="Your Name" aria-label="Your Name" autocomplete="name">
+          <input type="email" name="email" placeholder="Your Email" aria-label="Your Email" autocomplete="email">
+          <input type="text" name="subject" placeholder="Subject" aria-label="Subject" autocomplete="off">
+          <textarea name="message" placeholder="Your Message" aria-label="Your Message"></textarea>
+          <button type="submit" class="btn btn-primary" id="contact-submit">Send Message</button>
         </form>
       </div>
     </div>
@@ -389,6 +416,12 @@
       <p>&copy; 2026 Oscar. Designed and Developed by Oscar</p>
     </div>
   </footer>
+
+  <!-- Certificate lightbox: image is injected from #certificate-image by script.js -->
+  <div class="lightbox" id="certificate-lightbox" role="dialog" aria-modal="true" aria-label="Certificate preview">
+    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close certificate view">&times;</button>
+    <img alt="Full-size view of the Certificate of Internship issued by Kisaki AppLine">
+  </div>
 
   <script>
     (function () {
