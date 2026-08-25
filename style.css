@@ -1235,8 +1235,8 @@ footer {
 
 .certificate-media {
   float: left;
-  width: 55%;
-  padding-right: 30px;
+  width: 60%;
+  padding-right: 24px;
 }
 
 /* width:100% + height:auto keep the image's natural shape -
@@ -1244,11 +1244,7 @@ footer {
 .certificate-media img {
   display: block;
   width: 100%;
-  max-width: 100%;
   height: auto;
-  /* Matches the natural size of oca.png (576x370) so the
-     correct space is reserved before the image loads */
-  aspect-ratio: 576 / 370;
   object-fit: contain;
   background: #fff;
   border: 1px solid rgba(51, 51, 51, 0.12);
@@ -1258,7 +1254,7 @@ footer {
 
 .certificate-info {
   float: right;
-  width: 41%;
+  width: 36%;
   padding-top: 10px;
 }
 
