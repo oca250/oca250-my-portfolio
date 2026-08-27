@@ -186,19 +186,23 @@
 })();
 
 // ---------- 4. Certificate lightbox ----------
-// "View Certificate" opens the exact original image in a larger
-// overlay. Nothing about the image is modified - the lightbox
-// <img> simply reuses the same src as the section image.
+// Every "View Certificate" button (class .view-certificate) opens the
+// exact original image of its own card in a larger overlay. The lightbox
+// <img> simply reuses the src of that card's [data-cert-img] image -
+// nothing about the image is modified. Works for any number of cards.
 (function () {
-  var trigger = document.getElementById('view-certificate');
   var lightbox = document.getElementById('certificate-lightbox');
   var closeBtn = document.getElementById('lightbox-close');
-  var certificateImage = document.getElementById('certificate-image');
   var lightboxImage = lightbox ? lightbox.querySelector('img') : null;
-  if (!trigger || !lightbox || !closeBtn || !certificateImage || !lightboxImage) { return; }
+  if (!lightbox || !closeBtn || !lightboxImage) { return; }
 
-  function openLightbox() {
-    lightboxImage.src = certificateImage.currentSrc || certificateImage.src;
+  var activeTrigger = null;
+
+  function openLightbox(trigger) {
+    var cardImage = trigger.closest('.certificate-card').querySelector('[data-cert-img]');
+    if (!cardImage) { return; }
+    lightboxImage.src = cardImage.currentSrc || cardImage.src;
+    activeTrigger = trigger;
     lightbox.classList.add('open');
     document.body.classList.add('lightbox-open');
     closeBtn.focus();
@@ -207,10 +211,14 @@
   function closeLightbox() {
     lightbox.classList.remove('open');
     document.body.classList.remove('lightbox-open');
-    trigger.focus();
+    if (activeTrigger) { activeTrigger.focus(); }
   }
 
-  trigger.addEventListener('click', openLightbox);
+  var triggers = document.querySelectorAll('.view-certificate');
+  for (var i = 0; i < triggers.length; i++) {
+    triggers[i].addEventListener('click', function () { openLightbox(this); });
+  }
+
   closeBtn.addEventListener('click', closeLightbox);
 
   // Clicking the dark backdrop closes; clicking the image doesn't
