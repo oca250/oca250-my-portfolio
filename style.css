@@ -1296,6 +1296,14 @@ footer {
     padding: 18px;
   }
 
+  /* Give the buttons room to breathe on narrow screens so they
+     never touch or overlap and stay easy to tap */
+  .certificate-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
   .certificate-actions .btn + .btn {
     margin-left: 8px;
   }
