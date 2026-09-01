@@ -1269,11 +1269,11 @@ footer {
 }
 
 .certificate-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 10px;
   margin-top: 25px;
-}
-
-.certificate-actions .btn + .btn {
-  margin-left: 10px;
 }
 
 @media (max-width: 768px) {
@@ -1299,13 +1299,7 @@ footer {
   /* Give the buttons room to breathe on narrow screens so they
      never touch or overlap and stay easy to tap */
   .certificate-actions {
-    display: flex;
-    flex-wrap: wrap;
     gap: 12px;
-  }
-
-  .certificate-actions .btn + .btn {
-    margin-left: 8px;
   }
 }
 
